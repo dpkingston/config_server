@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Enter configuration parameters {% endblock %}</h1>
+    <form method="post">
+        <label for="title">Call sign</label>
+        <input type="text" name="call"
+               placeholder="Callsign"
+               value="{{ request.form['call'] }}"></input><br>
+	A valid amateur callsign with no suffixes (/7, -10, etc.).
+        <br><br>
+
+        <label for="location">Location</label>
+        <input type="text" name="location"
+               placeholder="Location"
+               value="{{ request.form['location'] }}"></input><br>
+	A one or two word description of your location, no spaces (- and _ are OK), 32 characters maximum.
+        <br><br>
+
+        <label for="destcell">Destination HamWAN Cell </label>
+	<select name="destcell" required>
+	  <option value="" disabled selected>Please select cell...</option> 
+	  <option>Portable</option>
+  	  <option>BawFaw</option>
+	  <option>Baldi</option>
+	  <option>Beacon</option>
+	  <option>Buck</option>
+	  <option>Haystack</option>
+	  <option>CapitolPark</option>
+  	  <option>ETiger</option>
+	  <option>Indianola</option>
+  	  <option>Lookout</option>
+  	  <option>Magnolia</option>
+	  <option>Mapleleaf</option>
+	  <option>MSV</option>
+	  <option>SnoDEM</option>
+	  <option>Triangle</option>
+	</select><br>
+	Single work name for the target HamWAN cell, or 'Portable' if not targing a specific cell.
+	<br><br>
+	
+        <label for="latitude">Latitude (optional)</label>
+        <input type="text" name="latitude"
+               placeholder="47.12345"
+               value="{{ request.form['latitude'] }}"></input><br>
+	Your latitude in decimal degrees (-90.0 to 90.0), up to 10 decimal places.
+        <br><br>
+
+        <label for="longitude">Longitude (optional)</label>
+        <input type="text" name="longitude"
+               placeholder="-122.56789"
+               value="{{ request.form['longitude'] }}"></input><br>
+	Your longitude in decimal degrees (-180.0 to 180.0), up to 10 decimal places.
+        <br><br>
+
+        <label for="admin_password">Admin Password</label>
+        {% set password = default_password %}
+        {% if request.form['admin_password'] %}
+	    {% set password = request.form['admin_password'] %}
+	{% endif %}
+        <input type="text" name="admin_password" value="{{ password }}"></input><br>
+	We strongly recommend that you use a strong password as your device will be accessible from the internet. Please use a strong password, minimum 8 characters.
+        <br><br>
+
+        <label for="ethernet_config">Ethernet configuration</label><br>
+        <input type="radio" name="ethernet_config" id="server" value="server" checked>
+        <label for="server">NAT'd Network Server (192.168.88.1/24) [Default]</label><br>
+        <input type="radio" name="ethernet_config" id="client" value="client">
+        <label for="client">DHCP Client</label><br>
+        <input type="radio" name="ethernet_config" id="none" value="client">
+        <label for="client">No ethernet configuration</label><br>
+        <br>
+
+        <button type="submit" name="submit" value="submit">Submit</button>
+        <button type="submit" name="submit" value="download">Download</button>
+    </form>
+{% endblock %}

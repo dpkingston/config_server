@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - HamWAN Config Builder</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+        nav a {
+            color: #1441a1;
+            font-size: 25px;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+	}
+
+        body {
+            font-family: sans-serif;
+	}
+    </style>
+    <link type="text/css" rel="stylesheet" href="/templates/hamwan.css">
+</head>
+<body>
+    <style>
+    </style>  
+    <nav>
+        <a href="https://hamwan.org/">
+            <img alt="HamWAN" src="/templates/logo.png" height=40px>
+	</a>
+        <a href="{{ url_for('config') }}">Client Configuration Form</a>
+        <a href="https://hamwan.org/Standards/Network%20Engineering/Client%20Node%20Configuration.html">Client Node Configuration</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

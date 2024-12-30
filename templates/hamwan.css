@@ -1,0 +1,94 @@
+.navbar-hamwan .navbar-brand {
+	height: 80px;
+	margin-top: -3px;  /* eat 3px of whitespace from the top of the logo png */
+	padding: 10px 0 0 15px;
+}
+.navbar-hamwan .navbar-brand > img {
+	max-height: 100%;
+}
+.navbar-hamwan,
+.navbar-hamwan .navbar-collapse {
+	background-color: transparent;
+	border: none;
+	min-height: 80px;
+}
+.navbar-hamwan .navbar-form {
+	margin-top: 10px;
+}
+.navbar-hamwan .nav>li>a,
+.navbar-hamwan .navbar-form * {
+	color: #999;
+	font-size: smaller;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+.navbar-hamwan .navbar-form .input-sm {
+	font-size: 100%;
+}
+.navbar-hamwan .navbar-form.navbar-right > button {
+	margin-right: -15px;
+}
+.toc {
+	padding: 0;
+}
+.breadcrumb {
+	clear: both;
+}
+@media (min-width: 768px) {
+.toc {
+	margin-top: 3.67em;
+	padding: inherit;
+	padding-right: 0;
+}
+.breadcrumb {
+	clear: none;
+}
+}
+.toc .panel-heading {
+	font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #999;
+    padding: 5px 15px;
+}
+#TOC > ul {
+	padding-left: 0;
+	font-size: small;
+	list-style: none;
+	font-weight: 500;
+}
+#TOC > ul li {
+	padding: 4px 0;
+}
+figure img,
+p img {
+	margin: 10px 0;
+	max-width: 100%;
+}
+footer {
+	margin-top: 20px;
+	background-color: #f2f2f2;
+	padding: 40px 0;
+}
+footer a {
+	color: #666;
+}
+#menu > ul {
+	display: inline-block;
+}
+#menu ul {
+	list-style: none;
+	padding-left: 15px;
+	text-align: left;
+}
+#menu > ul > li {
+	float: left;
+	max-width: 50%;
+}
+#menu > ul > li > a,
+#menu > ul > li > span {
+	display: block;
+	margin-top: 10px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
