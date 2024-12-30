@@ -16,3 +16,8 @@
     export FLASK_APP=config_server export FLASK_ENV=development
     flask run
 
+# References
+
+[Flask Project Documentation](https://flask.palletsprojects.com/en/stable/)
+
+[Flask Tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application)
